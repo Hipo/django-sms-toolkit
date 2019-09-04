@@ -1,0 +1,15 @@
+*.pyc
+!.gitignore
+dist/
+env/
+dist/
+*.egg-info
+.idea
+.pypirc
+.tox/
+.cache/
+coverage.xml
+.coverage
+__pycache__
+.DS_Store
+*.sqlite*
