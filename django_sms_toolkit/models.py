@@ -79,7 +79,7 @@ class TwilioMessage(models.Model):
         ordering = ["-creation_datetime"]
 
     def save(self, *args, **kwargs):
-        self.clean()
+        self.full_clean()
         super().save(*args, **kwargs)
 
     def clean(self):
