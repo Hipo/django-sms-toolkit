@@ -30,6 +30,7 @@ DJANGO_SMS_TOOLKIT_SETTINGS = {
         "ACCOUNT_SID": "",
         "AUTH_TOKEN": "",
         "STATUS_CALLBACK_BASE_URL": "https://www.myapp.com",
+        "TRIM_LONG_BODY": True,  # True by default. Makes sure character limit is not exceeded.
     }
 }
 ```

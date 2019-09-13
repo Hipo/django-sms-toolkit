@@ -15,7 +15,9 @@ def send_sms(from_number, to_number, body, recipient_id=None):
     # Twilio does not accept body larger than 1600 characters. https://www.twilio.com/docs/api/errors/21617
     # If the body is larger than 1600, Send the first 1600 chars.
     original_body = body
-    body = body[0:1600]
+
+    if DJANGO_SMS_TOOLKIT_SETTINGS["TWILIO"]["TRIM_LONG_BODY"]:
+        body = body[0:1600]
 
     # Create twilio message before calling twilio.
     # If twilio message object created after message is sent to Twilio, race condition occurs.
