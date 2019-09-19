@@ -12,6 +12,7 @@ setup(
     version='0.1.0',
     packages=['django_sms_toolkit'],
     include_package_data=True,
+    install_requires=['twilio >= 6.0.0'],
     license='Apache-2.0',
     description="It's a Django module to send and store SMS with Twilio.",
     long_description=README,
