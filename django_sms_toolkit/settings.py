@@ -11,8 +11,8 @@ DJANGO_SMS_TOOLKIT_SETTINGS["TWILIO"].setdefault("STATUS_CALLBACK_BASE_URL", "")
 DJANGO_SMS_TOOLKIT_SETTINGS["TWILIO"].setdefault("TRIM_LONG_BODY", True)
 
 
-required_twilio_fields = ["ACCOUNT_SID", "AUTH_TOKEN", "STATUS_CALLBACK_BASE_URL"]
-
-for field_name in required_twilio_fields:
-    if not DJANGO_SMS_TOOLKIT_SETTINGS["TWILIO"].get(field_name):
-        assert False, "DJANGO_SMS_TOOLKIT_SETTINGS['TWILIO']: {} is required.".format(field_name)
+if DJANGO_SMS_TOOLKIT_SETTINGS["SEND_SMS"]:
+    required_twilio_fields = ["ACCOUNT_SID", "AUTH_TOKEN", "STATUS_CALLBACK_BASE_URL"]
+    for field_name in required_twilio_fields:
+        if not DJANGO_SMS_TOOLKIT_SETTINGS["TWILIO"].get(field_name):
+            assert False, "DJANGO_SMS_TOOLKIT_SETTINGS['TWILIO']: {} is required.".format(field_name)
