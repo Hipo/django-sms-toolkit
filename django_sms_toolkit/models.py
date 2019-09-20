@@ -122,6 +122,9 @@ class TwilioMessageMixin(object):
     def send_sms(self, body, from_number=None):
         from .tasks import send_sms
 
+        if not DJANGO_SMS_TOOLKIT_SETTINGS["SEND_SMS"]:
+            return 'Cannot send SMS because of environment settings.'
+
         from_number = from_number or DJANGO_SMS_TOOLKIT_SETTINGS["DEFAULT_FROM_NUMBER"]
         assert from_number
 

@@ -10,7 +10,7 @@ from .settings import DJANGO_SMS_TOOLKIT_SETTINGS
 @shared_task(retry_backoff=30, retry_kwargs={'max_retries': 3})
 def send_sms(from_number, to_number, body, recipient_id=None):
     if not DJANGO_SMS_TOOLKIT_SETTINGS["SEND_SMS"]:
-        return 'Cannot send SMS because of environments settings.'
+        return 'Cannot send SMS because of environment settings.'
 
     # Twilio does not accept body larger than 1600 characters. https://www.twilio.com/docs/api/errors/21617
     # If the body is larger than 1600, Send the first 1600 chars.
