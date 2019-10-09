@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-sms-toolkit',
-    version='0.1.3',
+    version='0.1.4',
     packages=['django_sms_toolkit'],
     include_package_data=True,
     install_requires=['twilio >= 6.0.0'],
