@@ -49,7 +49,7 @@ class TwilioMessage(models.Model):
     )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    recipient = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="twilio_messages", on_delete=models.SET_NULL, null=True)
+    recipient = models.ForeignKey(settings.AUTH_USER_MODEL, related_name="twilio_messages", on_delete=models.SET_NULL, null=True, blank=True)
     message_sid = models.CharField(max_length=512, null=True, blank=True, unique=True)
     type = models.CharField(choices=TYPES, max_length=32)
     status = models.CharField(choices=STATUSES, max_length=32, blank=True)
