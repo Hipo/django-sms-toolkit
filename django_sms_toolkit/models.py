@@ -65,7 +65,7 @@ class TwilioMessage(models.Model):
     body = models.TextField()
 
     # TwilioRestException message if exists.
-    exception_message = models.TextField()
+    exception_message = models.TextField(blank=True)
 
     creation_datetime = models.DateTimeField(default=timezone.now)
     update_datetime = models.DateTimeField(auto_now=True)
