@@ -2,6 +2,8 @@
 
 Django module to send and store SMS with Twilio.
 
+It is useful to read [this](https://github.com/google/libphonenumber/blob/master/FALSEHOODS.md) before implementing any project involving phone numbers.
+
 ## Releases
 
 To release a new version via github.com, follow the steps in this [link](https://help.github.com/en/articles/creating-releases).
